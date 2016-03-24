@@ -112,19 +112,20 @@ public class Lector {
                                 + archivos.get(i).getAbsolutePath() + " | " + new Date() + " | "
                                 + planillaOriginal.getContrato());
                     } else {
-                        System.out.println("No se pudo procesar el archivo: " + archivos.get(i).getName() + " | "
+                        System.out.println("\n\nNo se pudo procesar el archivo: " + archivos.get(i).getName() + " | "
                                 + archivos.get(i).getAbsolutePath()
-                                + " porque la hoja Decreto 1443 o Decreto 1072 no existe");
+                                + " porque la hoja Decreto 1443 o Decreto 1072 no existe\n\n");
                     }
 
                 } else {
-                    System.out.println("No se pudo procesar el archivo: " + archivos.get(i).getName() + " | "
-                            + archivos.get(i).getAbsolutePath() + " porque la hoja Portada no existe");
+                    System.out.println("\n\nNo se pudo procesar el archivo: " + archivos.get(i).getName() + " | "
+                            + archivos.get(i).getAbsolutePath() + " porque la hoja Portada no existe\n\n");
                 }
             } catch (Exception e) {
-                System.out.println("Se presentó error leyendo el archivo " + archivos.get(i).getName() + " | "
+                System.out.println("\n\nSe presentó error leyendo el archivo " + archivos.get(i).getName() + " | "
                         + archivos.get(i).getAbsolutePath());
                 e.printStackTrace();
+                System.out.println("\n\n");
             }
         }
         return datosPlanillas;
