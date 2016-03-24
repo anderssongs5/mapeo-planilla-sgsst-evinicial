@@ -12,21 +12,24 @@ import co.com.arlsura.dto.PlanillaOriginal;
 public class Aplicacion {
 
     public static void main(String args[]) throws IOException, URISyntaxException {
-        System.out.println(new Date());
-        Lector archivoExcelLector = new Lector();
-        // List<PlanillaOriginal> planillas = archivoExcelLector
-        // .leerArchivos("C:\\Users\\Andersson\\Desktop\\Temporales\\EvaluacionesIniciales\\Parte1");
+        try {
+            String carpetaPlanillas = args[0];
+            String rutaDestino = args[1];
+            String nombreArchivoSalida = args[2];
 
-        List<PlanillaOriginal> planillasCarpetas = archivoExcelLector
-                .leerCarpetas("C:\\Users\\Andersson\\Desktop\\Temporales\\EvaluacionesIniciales\\Parte4\\NUEVAS");
+            System.out.println(new Date());
+            Lector archivoExcelLector = new Lector();
+            List<PlanillaOriginal> planillas = archivoExcelLector.leerArchivos(carpetaPlanillas);
 
-        Procesador procesador = new Procesador();
-        // procesador.mapearPlanilla(planillas);
-        procesador.mapearPlanilla(planillasCarpetas);
+            Procesador procesador = new Procesador();
+            procesador.mapearPlanilla(planillas, rutaDestino, nombreArchivoSalida);
 
-        System.out.println(new Date());
+            System.out.println(new Date());
 
-        // System.out.println(planillas.size());
-        System.out.println(planillasCarpetas.size());
+            System.out.println(planillas.size());
+        } catch (Exception e) {
+            System.out.println("Por favor verifique los parámetros iniciales para ejecutar la aplicación correctamente.");
+            e.printStackTrace();
+        }
     }
 }

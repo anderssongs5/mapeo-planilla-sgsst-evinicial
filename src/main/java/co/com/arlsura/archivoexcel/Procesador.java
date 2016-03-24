@@ -21,9 +21,7 @@ import co.com.arlsura.dto.PlanillaOriginal;
 
 public class Procesador {
 
-    private static final String RUTA_DESTINO = "C:\\Users\\Andersson\\Desktop\\Temporales";
-
-    public void mapearPlanilla(List<PlanillaOriginal> planillas) throws IOException, URISyntaxException {
+    public void mapearPlanilla(List<PlanillaOriginal> planillas, String rutaDestino, String nombreArchivo) throws IOException, URISyntaxException {
         System.out.println("Archivos para procesar: " + planillas.size());
 
         URL url = Procesador.class.getResource("/co/com/arlsura/archivoexcel/resources/NuevaPlanilla.xlsx");
@@ -57,7 +55,7 @@ public class Procesador {
 
         fileInputStream.close();
         FileOutputStream fileOutputStream = new FileOutputStream(
-                new File(RUTA_DESTINO + "\\EvaluacionesInicialesSabanaParte5.xlsx"));
+                new File(rutaDestino + "/" + nombreArchivo + ".xlsx"));
 
         workbook.write(fileOutputStream);
         fileOutputStream.close();

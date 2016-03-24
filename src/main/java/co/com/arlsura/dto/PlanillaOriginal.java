@@ -2,6 +2,8 @@ package co.com.arlsura.dto;
 
 public class PlanillaOriginal {
 
+    private String fullPathArchivo;
+
     private String contrato;
     private boolean sinContrato = false;
     private String noContrato;
@@ -92,6 +94,14 @@ public class PlanillaOriginal {
     private int si;
     private String nit;
     private String nombreArchivo;
+
+    public String getFullPathArchivo() {
+        return fullPathArchivo;
+    }
+
+    public void setFullPathArchivo(String fullPathArchivo) {
+        this.fullPathArchivo = fullPathArchivo;
+    }
 
     public String getContrato() {
         return contrato;

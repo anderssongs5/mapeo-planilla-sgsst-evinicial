@@ -17,14 +17,6 @@ sourceSets{
 			srcDir 'src/java/resources'
 		}*/
 	}
-	/*test{
-		java {
-			srcDir 'src/test/java'
-		}
-		resources {
-			srcDir 'src/test/resources'
-		}
-	}*/
 }
 
 repositories {
@@ -34,24 +26,18 @@ repositories {
 dependencies {
 	compile group:'org.apache.poi', name:'poi', version: '3.13' 
 	compile group:'commons-logging', name:'commons-logging', version: '1.1.3'
-	compile 'log4j:log4j:1.2.17'
-	compile 'org.apache.xmlbeans:xmlbeans:2.6.0'
-	compile 'org.apache.poi:poi-ooxml:3.13'
-	
-
-	// ************************** PRUEBAS AUTOMATIZADAS ************************** //
-	testCompile group: 'org.powermock', name:'powermock-module-junit4', version:'1.+'
-	testCompile group: 'org.powermock', name:'powermock-api-mockito', version:'1.+'
-	// *********************** FIN PRUEBAS AUTOMATIZADAS *********************** //
+	compile group:'log4j', name:'log4j', version: '1.2.17'
+	compile group:'org.apache.xmlbeans', name:'xmlbeans', version: '2.6.0'
+	compile group:'org.apache.poi', name:'poi-ooxml', version: '3.13'
 }
 
 jar {
-	archiveName = "ejemplos-practica-empresarial.jar"
+	archiveName = "mapeo-planilla-sgsst-evinicial.jar"
 	manifest {
 		def dateTime = new Date() 
 		attributes(
-			"Implementation-Title": "Ejemplos-Practica-Empresarial",
-			"Main-Class": "co.edu.udea.practicaempresarial.Aplicacion",
+			"Implementation-Title": "Mapeo Planilla SG-SST Evaluación Inicial",
+			"Main-Class": "co.com.arlsura.Aplicacion",
 			"Creation-Date": dateTime.toTimestamp().toString(),
 			"Built-JDK": System.getProperty('java.version'),
 		)
