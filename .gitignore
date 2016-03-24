@@ -1,0 +1,8 @@
+# Directories #
+/bin
+/build
+
+# Package Files #
+*.jar
+*.war
+*.ear
