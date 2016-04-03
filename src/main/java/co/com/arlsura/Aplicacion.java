@@ -20,6 +20,8 @@ public class Aplicacion {
             System.out.println(new Date());
             Lector archivoExcelLector = new Lector();
             List<PlanillaOriginal> planillas = archivoExcelLector.leerArchivos(carpetaPlanillas);
+            // List<PlanillaOriginal> planillas =
+            // archivoExcelLector.leerCarpetas(carpetaPlanillas);
 
             Procesador procesador = new Procesador();
             procesador.mapearPlanilla(planillas, rutaDestino, nombreArchivoSalida);
@@ -28,7 +30,8 @@ public class Aplicacion {
 
             System.out.println(planillas.size());
         } catch (Exception e) {
-            System.out.println("Por favor verifique los parámetros iniciales para ejecutar la aplicación correctamente.");
+            System.out
+                    .println("Por favor verifique los parámetros iniciales para ejecutar la aplicación correctamente.");
             e.printStackTrace();
         }
     }
