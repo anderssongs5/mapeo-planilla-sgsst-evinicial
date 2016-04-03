@@ -19,10 +19,9 @@ import co.com.arlsura.dto.PlanillaOriginal;
 
 public class Lector {
 
-    // private static final String SIN_IMPLEMENTAR = "0.0";
-    // private static final String SIN_IMPLEMENTAR0 = "0";
     private static final String IMPLEMENTADO = "2.0";
     private static final String IMPLEMENTADO2 = "2";
+    private static final String IMPLEMENTADO_TOTAL = "Implementado totalmente";
     private int si = 0;
     private List<String> nombresHojaDecreto = Arrays.asList("Decreto 1443", "Decreto 1072", "Decreto1443",
             "Decreto1072", "Decreto 1443 ", "Decreto 1072 ", "decreto 1443", "decreto1443", "decreto 1072",
@@ -133,7 +132,7 @@ public class Lector {
 
     private void setDatosPlanillaOriginal(int posicion, Row row, PlanillaOriginal planillaOriginal,
             FormulaEvaluator formulaEvaluator) {
-        String campo = this.obtenerValorCelda(row.getCell(10), row.getCell(10).getCellType(), formulaEvaluator);
+        String campo = this.obtenerValorCelda(row.getCell(11), row.getCell(11).getCellType(), formulaEvaluator);
         String m = this.mapearValorCampo(campo);
         if ("Si".equals(m)) {
             this.si += 1;
@@ -373,7 +372,8 @@ public class Lector {
     }
 
     private String mapearValorCampo(String campo) {
-        if (campo != null && (IMPLEMENTADO.equals(campo) || IMPLEMENTADO2.equals(campo))) {
+        if (campo != null && (IMPLEMENTADO.equals(campo) || IMPLEMENTADO2.equals(campo))
+                || IMPLEMENTADO_TOTAL.equals(campo)) {
             return "Si";
         } else {
             return "No";
