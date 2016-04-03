@@ -372,8 +372,8 @@ public class Lector {
     }
 
     private String mapearValorCampo(String campo) {
-        if (campo != null && (IMPLEMENTADO.equals(campo) || IMPLEMENTADO2.equals(campo))
-                || IMPLEMENTADO_TOTAL.equals(campo)) {
+        if (campo != null && (IMPLEMENTADO.equals(campo.trim()) || IMPLEMENTADO2.equals(campo.trim())
+                || IMPLEMENTADO_TOTAL.equalsIgnoreCase(campo.trim()))) {
             return "Si";
         } else {
             return "No";
